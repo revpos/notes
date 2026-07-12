@@ -45,7 +45,11 @@ also remembers the last entry.
     # ...edit the timeout to set to 1, exit vim
 ```
 
-2. Backed up the `/etc/default/limine` as `limine.bak.10_07_26`. Disabled the plymouth splash.
+2. Backed up the `/etc/default/limine` as `limine.bak.10_07_26`.
+Updated KERNEL_CMDLINE with the below snippet resulted in disabling the plymouth splash.
+```
+KERNEL_CMDLINE[default]+="rootflags=subvol=/@ rd.luks.uuid=5cacd618-5ba6-428d-86b8-7e997b858e73 root=/dev/mapper/luks-5cacd618-5ba6-428d-86b8-7e997b858e73 quiet rd.udev.log_priority=3"
+```
 
 3. Disabled the `NetworkManager-wait-online`
 ```bash
