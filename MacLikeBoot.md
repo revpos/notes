@@ -51,6 +51,11 @@ Updated KERNEL_CMDLINE with the below snippet resulted in disabling the plymouth
 KERNEL_CMDLINE[default]+="rootflags=subvol=/@ rd.luks.uuid=5cacd618-5ba6-428d-86b8-7e997b858e73 root=/dev/mapper/luks-5cacd618-5ba6-428d-86b8-7e997b858e73 quiet rd.udev.log_priority=3"
 ```
 
+Then regenerate the limine config with running the command below-
+```bash
+$ limine-mkinitcpio
+```
+
 3. Disabled the `NetworkManager-wait-online`
 ```bash
     $ sudo systemctl disable NetworkManager-wait-online.service
